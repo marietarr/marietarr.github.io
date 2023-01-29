@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>WebSite</title>
+    <link rel="stylesheet" href="estilo.css">
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+    <link rel="stylesheet" href="MarkerCluster.css" />
+    <link rel="stylesheet" href="MarkerCluster.Default.css" />
+    <link rel="stylesheet" type="text/css" href="inundaciones.css">
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="Leaflet.Legend-master/src/leaflet.legend.css">
+   
+
+    
+    <script src="geo/inundaciones.geojson"></script>
+    <script src="geo/rios_M.geojson"></script>
+    <script src="geo/freguesias.geojson"></script>
+    <script src="geo/cheias.geojson"></script>
+    <script src="geo/perfil.geojson"></script>
+    <script src="inundaciones.js" defer></script>
+    
+
+    <script src="leaflet.markercluster-src.js"></script>
+    
+
+
+</head>
+<body>
+    <!-- MENU ENCABEZADO -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#">Laura</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
+                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()">CURRICULUM</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTAFOLIO</a></li>
+                    <li><a href="https://arcg.is/1Cuzef0" onclick="seleccionar()">STORYMAP</a></li>
+                    <li><a href="#websig" onclick="seleccionar()">WEBSIG</a></li>
+                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
+                </ul>
+            </nav>  
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-banner">
+            <div class="contenedor-img">
+                <img src="img/foto_perfil.png" alt="">
+            </div>
+            <h1>Laura Rojas</h1>
+            <h2>Ecóloga Urbana- Experta Ciudades Sustentables</h2>
+            <div class="redes">
+                <a href="https://www.facebook.com/laura.r.rojas.n"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.skype.com/es/"><i class="fa-brands fa-skype"></i></a>
+                <a href="https://www.linkedin.com/in/laura-m-ramirez-54b37b192/"><i class="fa-brands fa-linkedin-in"></i></a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION SOBRE MI -->
+    <section id="sobremi" class="sobremi">
+        <div class="contenido-seccion">
+            <h2>Sobre Mí</h2>
+            <p><span>Hola, soy Laura Rojas.</span> Ecóloga Urbanista, con capacidad de identificar, comprender y proponer alternativas que conduzcan a
+                controlar, eliminar, prevenir y mitigar problemas ambientales provocados por fenómenos naturales o actividad
+                antrópica (en el sistema físico, biológico y humano); en un marco de producción más limpia y desarrollo
+                sostenible, ajustado a las políticas ambiental y la normatividad ambiental vigente.</p>
+
+            <div class="fila">
+                <!-- datos personales -->
+                <div class="col">
+                    <h3>Datos Personales</h3>
+                    <ul>
+                        <li>
+                            <strong>Cumpleaños</strong>
+                            04-05-1994
+                        </li>
+                        <li>
+                            <strong>Teléfono oficina</strong>
+                            2114312 ext 3454
+                        </li>
+                        <li>
+                            <strong>Email</strong>
+                            ramirez_l@javeriana.edu.co
+                        </li>
+                    
+                        <li>
+                            <strong>Dirección</strong>
+                            calle 79 #10-49
+                        </li>
+                        <li>
+                            <strong>Cargo</strong>
+                            <span>Asesora</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- intereses -->
+                <div class="col">
+                    <h3>Intereses</h3>
+                    <div class="contenedor-intereses">
+                        <div class="interes">
+                            <i class="fa-solid fa-paw"></i>
+                            <span>ANIMALES</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>MUSICA</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-plane"></i>
+                            <span>VIAJAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-sharp fa-solid fa-kitchen-set"></i>
+                            <span>COCINAR</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-person-hiking"></i>
+                            <span>DEPORTE</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-book"></i>
+                            <span>LIBROS</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-sharp fa-solid fa-fire"></i>
+                            <span>CAMPING</span>
+                        </div>
+                        <div class="interes">
+                            <i class="fa-solid fa-camera"></i>
+                            <span>FOTOGRAFIA</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <button>
+                Descargar CV <a href="img/Laura M. Ramírez_HOJA DE VIDA 2022.pdf"><i class="fa-solid fa-download"></i></a>
+                <span class="overlay"></span>
+                
+            </button>
+        </div>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section class="skills" id="skills">
+        <div class="contenido-seccion">
+            <h2>Skills</h2>
+            <div class="fila">
+                <!-- Technical Skill -->
+                <div class="col">
+                    <h3>Habilidades técnicas</h3>
+                    <div class="skill">
+                        <span>Excel</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Power Point</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>89%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Word</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>95%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>ArcGis</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>81%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Photoshop</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>55%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professional Skills -->
+                <div class="col">
+                    <h3>Habilidades profesionales</h3>
+                    <div class="skill">
+                        <span>Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Trabajo en Equipo</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Creatividad</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Dedicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>90%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <span>Comunicación</span>
+                        <div class="barra-skill">
+                            <div class="progreso">
+                                <span>94%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CURRICULUM -->
+    <section class="curriculum" id="curriculum">
+        <div class="contenido-seccion">
+            <h2>Curriculum</h2>
+            <div class="fila">
+    <div class="container">
+        <div class="left_Side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="img/foto_redonda.png">  
+                </div>
+             <h2>Laura Rojas<br><span>Ecologa Urbanista</span></h2>
+        </div>
+
+
+     
+
+        <div class="contactInfo education ">
+            <h3 class="title">Educación</h3>
+            <ul>
+                <li>
+                    <h5> 2021-2022</h5>
+                    <h4>Maestria/Sistema de Información Geográfica y Ordenamiento del Território (SIGOT)- en curso</h4>
+                    <h4>Universidad de Porto</h4>
+                </li>
+                <li>
+                    <h5> 2019-2021</h5>
+                    <h4>Maestria/Urbanismo Sustentable y Ordenamiento del Território (MUSOT)</h4>
+                    <h4>Universidad Nova de Lisboa</h4>
+                </li>
+                <li>
+                    <h5> 2018-2019</h5>
+                    <h4>Especialización/ Metabolismo urbano: restauração ecológica nas cidades</h4>
+                    <h4>Universidad de Madrid</h4>
+                </li>
+                <li>
+                    <h5> 2013-2019</h5>
+                    <h4>Licenciatura/ Ecologia- Estudos ambientales y rurales</h4>
+                    <h4>Pontifícia Universidade Javeriana</h4>
+                </li>
+            </ul>
+        </div>
+
+            <div class="contactInfo language ">
+                <h3 class="title">Idiomas</h3>
+                <ul>
+                    <li>
+                        <span class="text">Inglés</span> 
+                        <span class="percent">
+                        <div style="width: 90%;"></div>
+                    </span>
+                    </li>
+                    <li>
+                        <span class="text">Francés</span> 
+                        <span class="percent">
+                            <div style="width: 75%;"></div>
+                        </span>
+                            
+                    </li>
+                    <li>
+                        <span class="text">Portugués</span> 
+                        <span class="percent">
+                            <div style="width: 80%;"></div>
+                        </span>
+                            
+                    </li>
+                    <li>
+                        <span class="text">Espanhol</span> 
+                        <span class="percent">
+                            <div style="width: 100%;"></div>
+                        </span>
+                            
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right_Side">
+            <div class=" about">
+                <h2 class="title2">Perfil profesional</h2>
+                <p>Mi compromiso personal se desarrolla en el campo de las ciudades inteligentes. Me
+                    interesa en especial los lugares densamente poblados, las ciudades que han crecido con la
+                    afluencia de muchos y muy variados individuos que encuentran en la construcción de los
+                    lugares urbanos la expresión abierta de la cultura. Allí, considero, es donde la acción de los
+                    ecólogos urbanistas es fundamental. Mi aproximación profesional está siempre en proceso. El
+                    comportamiento de los individuos en la ciudad son factor clave al construir nuevas formas de
+                    gobernabilidad y gobernanza.</p>
+            </div> 
+            <div class="about">
+                <h2 class="title2">Experiencia</h2>
+                <div class="box">
+                    
+                    
+                    <div class="year_company">
+                        <p><strong>17 de enero 2022- 20 de agosto 2022</strong></p>
+                        
+                    </div>
+                    <div class="text">
+                        <p>Consultoria para el plan de gestión y protección patrimonial del Museo interactivo de Maloca.</p>
+                        
+
+                    <div class="year_company">
+                        <p><strong>03 de agosto 2021- 16 de enero 2022</strong></p>
+                        
+                    </div>
+
+                    <div class="text">
+                        <p>Consultoria ambiental en SIG en Colombia
+                            y en Peru. Diagnóstico del Plan de Manejo da área
+                            metropolitana de Lima Peru.</p>
+
+                    </div>
+
+                    <div class="year_company">
+                        <p><strong>15 de noviembre 2019 - 13 de abril 2020</strong></p>
+
+                    </div>
+                    <div class="text">
+                        <p>Consórcio Parque Nacional PEMP 2019. Diagnóstico del
+                            Plan Especial de Manejo y protección (PEMP) del bien de interes cultural nacional (BICNAL) do Parque Nacional
+                            Olaya Herrera. Apoyo al componente ambiental, paisajístico y colaboración en la construcción SIG.</p>
+                        
+                    </div>
+                    <div class="year_company">
+                        <p><strong>03 febrero - 07 de julio 2017</strong></p>
+                        
+                    </div>
+                    <div class="text">
+                        <p>Instituto Colombiano de Antropologia e História (ICANH).
+                             Prática Social de la Faculdad de Ecologia de la Universidad Javeriana, 
+                             sede Bogotá, en el Parque Arqueológico de San Agustín.
+                            La prática conto con el título “Identificación de flora dentro del bosque
+                            de estatuas del Parque Arqueológico de San Agustín. 
+                            Departamento da Huíla”.</p>
+
+                    </div>
+                </div>
+                <div class="year_company">
+                    <p><strong>01 de agosto 2015 - 01 de septiembre 2015</strong></p>
+                </div>
+                <div class="text">
+                    <p>R+R S.A.S. Apoyo al equipo de investigación social y ambiental en la elaboración de la cartilla
+                        “Avenida Jorge Eliecer Gaitán. Corredor Cultural Calle 26: eje de la paz y la memoria” como parte
+                        del convenio entre la Fundación Rogelio Salmona y la Secretaría de Cultura, Recreación y
+                        Deporte del Distrito Capital.</p>
+
+                </div>
+                <div class="year_company">
+                    <p><strong>01 de junio 2013 - 01 de julio 2013</strong></p>
+                    
+                </div>
+                <div class="text">
+                    <p>Apoyo al equipo de trabajo de campo en levantamientos urbanos, arquitectónicos y de
+                        elementos ambientales por medio de registros fotográficos, encuestas a la comunidad y
+                        logística en talleres comunitarios; en el desarrollo de la Revisión y Ajustes al Plan de
+                        Ordenamiento Territorial del Municipio de Sogamoso, Boyacá.</p>
+                    
+    
+
+                </div>
+
+                <div class="year_company">
+                    <p><strong>06 de enero 2013 - 05 de febrero 2013</strong></p>
+                    
+                </div>
+                <div class="text">
+                    <p>Apoyo al equipo de trabajo de campo en levantamientos arquitectónicos, registros fotográficos,
+                        encuestas a la comunidad y logística en talleres comunitarios en el plan especial de manejo y
+                        protección de Abejorral, Antioquia.</p>
+                    
+
+                </div>
+
+                <div class="year_company">
+                    <p><strong>06 de diciembre 2012 - 05 de enero 2013</strong></p>
+                    
+                </div>
+                <div class="text">
+                    <p>Apoyo al equipo de trabajo de campo en levantamientos arquitectónicos, registros fotográficos,
+                        encuestas a la comunidad y logística en talleres comunitarios en el plan especial de manejo y
+                        protección de Salamina, Caldas.</p>
+                </div>
+                <div class="year_company">
+                    <p><strong>Enero de 2010- Septiembre de 2010</strong></p>
+                    
+                </div>
+                <div class="text">
+                    <p>Apoyo al equipo de trabajo de campo en levantamientos arquitectónicos, registros fotográficos,
+                        encuestas a la comunidad y logística en talleres comunitarios; en la elaboración de la Fase II del
+                        Plan Especial de Manejo y Protección (PEMP), del centro histórico de Santa Cruz de Lorica y su
+                        área de influencia en el municipio de Córdoba.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+
+    </div>
+
+    <!-- SECCION PORTFOLIO -->
+    <section id="portfolio" class="portfolio">
+        <div class="contenido-seccion">
+            <h2>PORTAFOLIO</h2>
+        <div class= "galeria">
+            <a href="laura - Cópia/Galeria-de-Imagenes-master/portafolio.html">
+                <img src="img/susceptibilidad de inundación - Cópia.jpg" width="500"height="500" alt="">
+            </a>   
+             
+        </div >    
+            
+            
+        </div>
+    </section>
+
+
+    <!-- SECCION WEBSIG -->
+    <section id="websig" class="websig">
+        <div class="contenido-seccion">
+            <h2>WEBSIG</h2>
+            <p><span>Las inundaciones siempre han sido un problema en suelo urbano. El incorrecto manejo de las aguas pluviales en periodos húmedos impacta el funcionamiento de las actividades urbanas. 
+                La percepción sobre las inundaciones en cuencas hidrográficas pequeñas, no conllevan consecuencias tan graves como en cuencas mayores, donde los caudales involucrados son sustancialmente mayores, no en tanto, no debe constituir 
+                una razón para relegar este tipo de estudios a cuencas pequeñas (Velhas, 1991, 140). 
+
+            </p>
+
+            <div id="map">i</div>
+
+            <p><br>En el mapa estan expuestos los zonas de inundaciones en donde se ha presenciado algun tipo de inundación en el concelho de Matosinhos. Esta camada de puntos de incidencia, obtenidos por la Cámara municipal de Matosinhos, se configura con 545 puntos. Cada uno de ellos tiene registro sobre la cantidad de veces que se ha inundado el área. 
+            </p>
+
+            
+
+
+
+
+
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto" class="contacto">
+        <div class="contenido-seccion">
+            <h2>CONTACTO</h2>
+            <div class="fila">
+                <!-- Formulario -->
+                <div class="col">
+                    <input type="text" placeholder="Tú Nombre">
+                    <input type="text" placeholder="Número telefónico">
+                    <input type="text" placeholder="Dirección de correo">
+                    <input type="text" placeholder="Tema">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <button>
+                        Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
+                        <span class="overlay"></span>
+                    </button>
+                </div>
+                <!-- Mapa -->
+                <div class="col">
+                    <img src="img/mapa.jpg" alt="">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                calle 79 10 49 Bogotá
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Llamanos: 2114312 ext 3454
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: ramirez_l@javeriana.edu.co
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <a href="#inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-skype"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-solid fa-rss"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
