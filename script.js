@@ -48,13 +48,13 @@ var map = L.map('map',{
 });
 
 // Base maps
-var basetopo = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
+var basetopo = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {});
 	
 var baserelief = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
 });
-var googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+var googleSat = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
         maxZoom: 20,
         subdomains:['mt0','mt1','mt2','mt3']
 });
