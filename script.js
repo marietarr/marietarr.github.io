@@ -264,7 +264,7 @@ var overlays = {
 
 
 
-L.control.layers(   , overlays).addTo(map);
+L.control.layers( baselayers, overlays).addTo(map);
 
 
 
